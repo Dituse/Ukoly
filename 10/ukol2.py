@@ -5,12 +5,12 @@ import requests
 import json
 
 try:
-    response = requests.get('https://cat-fact.herokuapp.com/facts', timeout=0.001)
+    response = requests.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=10', timeout=0.001)
     data = response.json()
 except requests.Timeout:
     print('Jsi příliš nedočkavá/ý.')
 finally:
-    response = requests.get('https://cat-fact.herokuapp.com/facts', timeout=0.5)
+    response = requests.get('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=10', timeout=0.5)
     data = response.json()
 
 
